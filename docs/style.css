@@ -21,3 +21,8 @@ li a:hover { /* When hovering over <a> tags that are inside <li> tags */
   background-color: #555;
   color: white;
 }
+
+.current_page {
+  background-color: #04AA6D;
+  color: white;
+}
