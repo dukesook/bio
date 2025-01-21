@@ -1,3 +1,23 @@
 body {
   background-color: lightblue;
 }
+
+.navbar {
+  list-style-type: none; /* Removes the bullet points */
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+li a { /* For each <a> tag inside an <li> tag */
+  display: block; /* Makes the entire area clickable */
+  color: black; /* Links are blue by default */
+  padding: 8px 16px; /* TODO: Research padding vs margin*/
+  text-decoration: none; /* Remove underline */
+}
+
+li a:hover { /* When hovering over <a> tags that are inside <li> tags */
+  background-color: #555;
+  color: white;
+}
