@@ -20,6 +20,17 @@ tr {
   border-width: 1px;
 }
 
+footer {
+  text-align: center;
+  /* padding: 3px; */
+  background-color: DarkSalmon;
+  color: white;
+}
+footer a, footer p {
+  display: block;
+  margin: 5px 0px; /* 5 = top/bottom.    0 = left/right */
+}
+
 li a { /* For each <a> tag inside an <li> tag */
   display: block; /* Makes the entire area clickable */
   color: black; /* Links are blue by default */
