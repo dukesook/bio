@@ -2,6 +2,14 @@ body {
   background-color: lightblue;
 }
 
+table {
+  background-color: black;
+}
+
+tr {
+  background-color: white;
+}
+
 .navbar {
   list-style-type: none; /* Removes the bullet points */
   margin: 0;
