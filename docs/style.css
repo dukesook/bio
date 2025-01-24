@@ -2,6 +2,10 @@ body {
   background-color: lightblue;
 }
 
+img {
+  height: 400px;
+}
+
 table {
   background-color: black;
 }
