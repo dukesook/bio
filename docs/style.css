@@ -31,14 +31,14 @@ footer a, footer p {
   margin: 5px 0px; /* 5 = top/bottom.    0 = left/right */
 }
 
-li a { /* For each <a> tag inside an <li> tag */
+nav a { /* For each <a> tag inside an <nav> tag */
   display: block; /* Makes the entire area clickable */
   color: black; /* Links are blue by default */
   padding: 8px 16px; /* TODO: Research padding vs margin*/
   text-decoration: none; /* Remove underline */
 }
 
-li a:hover { /* When hovering over <a> tags that are inside <li> tags */
+nav a:hover { /* When hovering over <a> tags that are inside <nav> tags */
   background-color: #555;
   color: white;
 }
