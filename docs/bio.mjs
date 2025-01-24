@@ -24,7 +24,10 @@ async function loadNavbar() {
   }
 
   // Highlight Current Page
-  const currentPage = window.location.pathname.split('/').pop();
+  let currentPage = window.location.pathname.split('/').pop();
+  if (currentPage === '') {
+    currentPage = 'index.html';
+  }
   const navLinks = navbarContainer.querySelectorAll('a');
   navLinks.forEach(link => {
     const linkPage = link.getAttribute('href');
