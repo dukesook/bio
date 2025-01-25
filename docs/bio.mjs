@@ -3,7 +3,7 @@ console.log('loaded bio.mjs')
 document.addEventListener('DOMContentLoaded', async () => {
   await loadNavbar();
   loadFooter();
-  themeListener();
+  loadTheme();
 });
 
 
@@ -55,22 +55,40 @@ async function loadFooter() {
   }
 }
 
-function themeListener() {
-  const radioThemes = document.querySelectorAll('input[name="theme"]')
 
-  // Add event listener to each radio button
-  radioThemes.forEach(radio => {
+function setDarkTheme() {
+  sessionStorage.setItem('theme', 'dark');
+  document.body.style.backgroundColor = 'black';
+  document.body.style.color = 'white';
+}
+
+function setLightTheme() {
+  sessionStorage.setItem('theme', 'light');
+  document.body.style.backgroundColor = 'white';
+  document.body.style.color = 'black';
+}
+
+function loadTheme() {
+  // Initialize Theme
+  const currentTheme = sessionStorage.getItem('theme');
+  if (currentTheme == null) {
+    setLightTheme()
+  }
+
+  const radioButtons = document.querySelectorAll('input[name="theme"]')
+  radioButtons.forEach(radio => {
     radio.addEventListener('change', () => {
-      if (radio.checked) {
-        console.log(`Theme changed to: ${radio.id}`);
-        // Perform your logic here, e.g., change the theme
-        if (radio.id === 'light-mode') {
-          document.body.style.backgroundColor = 'white';
-          document.body.style.color = 'black';
-        } else if (radio.id === 'dark-mode') {
-          document.body.style.backgroundColor = 'black';
-          document.body.style.color = 'white';
-        }
+      if (!radio.checked) {
+        return;
+      }
+      const theme = radio.id;
+      console.log(`Theme changed to: ${radio.id}`);
+      if (radio.id === 'light-mode') {
+        setLightTheme();
+      } else if (radio.id === 'dark-mode') {
+        setDarkTheme();
+      } else {
+        console.error('Unknown theme:', radio.id);
       }
     });
   });

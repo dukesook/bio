@@ -51,3 +51,13 @@ nav a:hover { /* When hovering over <a> tags that are inside <nav> tags */
   background-color: #04AA6D;
   color: white;
 }
+
+.light-theme {
+  background-color: white;
+  color: black;
+}
+
+.dark-theme {
+  background-color: black;
+  color: white;
+}
