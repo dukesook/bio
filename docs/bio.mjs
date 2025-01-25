@@ -3,6 +3,7 @@ console.log('loaded bio.mjs')
 document.addEventListener('DOMContentLoaded', async () => {
   await loadNavbar();
   loadFooter();
+  themeListener();
 });
 
 
@@ -54,4 +55,23 @@ async function loadFooter() {
   }
 }
 
+function themeListener() {
+  const radioThemes = document.querySelectorAll('input[name="theme"]')
 
+  // Add event listener to each radio button
+  radioThemes.forEach(radio => {
+    radio.addEventListener('change', () => {
+      if (radio.checked) {
+        console.log(`Theme changed to: ${radio.id}`);
+        // Perform your logic here, e.g., change the theme
+        if (radio.id === 'light-mode') {
+          document.body.style.backgroundColor = 'white';
+          document.body.style.color = 'black';
+        } else if (radio.id === 'dark-mode') {
+          document.body.style.backgroundColor = 'black';
+          document.body.style.color = 'white';
+        }
+      }
+    });
+  });
+}
