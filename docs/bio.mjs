@@ -1,4 +1,6 @@
 console.log('loaded bio.mjs')
+theme = sessionStorage.getItem('theme');
+console.log('The sessionStorage theme is:', theme);
 
 document.addEventListener('DOMContentLoaded', async () => {
   await loadNavbar();
@@ -57,22 +59,32 @@ async function loadFooter() {
 
 
 function setDarkTheme() {
-  sessionStorage.setItem('theme', 'dark');
-  document.body.style.backgroundColor = 'black';
-  document.body.style.color = 'white';
+  sessionStorage.setItem('theme', 'dark-mode');
+  document.body.classList.remove('light-mode');
+  document.body.classList.add('dark-mode');
 }
 
 function setLightTheme() {
-  sessionStorage.setItem('theme', 'light');
-  document.body.style.backgroundColor = 'white';
-  document.body.style.color = 'black';
+  sessionStorage.setItem('theme', 'light-mode');
+  document.body.classList.remove('dark-mode');
+  document.body.classList.add('light-mode');
 }
 
 function loadTheme() {
   // Initialize Theme
   const currentTheme = sessionStorage.getItem('theme');
-  if (currentTheme == null) {
+  if (currentTheme == null | currentTheme === '') {
     setLightTheme()
+  } else if (currentTheme === 'light-mode') {
+    setLightTheme();
+  } else if (currentTheme === 'dark-mode') {
+    setDarkTheme();
+  } else {
+    console.log('typeof theme:', typeof currentTheme);
+    console.log('theme length:', currentTheme.length);
+    console.log('theme:', currentTheme);
+    setLightTheme();
+    throw new Error('Unknown theme:', currentTheme);
   }
 
   const radioButtons = document.querySelectorAll('input[name="theme"]')
