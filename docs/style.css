@@ -6,9 +6,10 @@ img {
   max-width: 1000px;
 }
 
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 1000px) {
   img {
-    max-width: 400px;
+    max-width: 800px;
   }  
 }
 
@@ -18,11 +19,13 @@ img {
   }  
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 600px) {
   img {
-    max-width: 800px;
+    max-width: 400px;
   }  
 }
+
+
 
 table {
   background-color: black;
