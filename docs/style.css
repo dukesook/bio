@@ -3,15 +3,26 @@ body {
 }
 
 img {
-  height: 400px;
+  max-width: 1000px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
   img {
-    height: 200px;
+    max-width: 400px;
   }  
 }
 
+@media screen and (max-width: 800px) {
+  img {
+    max-width: 600px;
+  }  
+}
+
+@media screen and (max-width: 1000px) {
+  img {
+    max-width: 800px;
+  }  
+}
 
 table {
   background-color: black;
