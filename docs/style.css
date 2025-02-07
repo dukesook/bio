@@ -2,28 +2,45 @@ body {
   background-color: lightblue;
 }
 
+/* Makes the page responsive */
 img {
-  max-width: 1000px;
+  max-width: 100%; /* Ensures images never overflow their container */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Prevents extra space below inline images */
+  border-radius: 8px; /* Optional: rounded corners for a modern look */
 }
 
 
-@media screen and (max-width: 1000px) {
+@media (max-width: 2048px) {
   img {
-    max-width: 800px;
-  }  
+    max-width: 1800px;
+  }
 }
 
-@media screen and (max-width: 800px) {
+@media (max-width: 1600px) {
   img {
-    max-width: 600px;
-  }  
+    max-width: 1024px;
+  }
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 1024px) {
   img {
-    max-width: 400px;
-  }  
+    max-width: 512px;
+  }
 }
+
+@media (max-width: 768px) {
+  img {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  img {
+    width: 200px;
+  }
+}
+
 
 
 
